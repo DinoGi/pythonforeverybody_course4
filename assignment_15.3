@@ -2,24 +2,14 @@
 # Using Databases with Python
 # Class of Week 2
 # Assignment 15.3
-# Our First Database
+# Counting Organizations
 
 """
-create a SQLITE database or use an existing database and create a table in the database called "Ages":
+This application will read the mailbox data (mbox.txt) and count the number of email messages per organization (i.e. domain name of the email address) using a database with the following schema to maintain the counts.
 
-CREATE TABLE Ages ( 
-  name VARCHAR(128), 
-  age INTEGER
-)
-Then make sure the table is empty by deleting any rows that you previously inserted, and insert these rows and only these rows with the following commands:
-
-DELETE FROM Ages;
-INSERT INTO Ages (name, age) VALUES ('Guy', 39);
-INSERT INTO Ages (name, age) VALUES ('Ebeny', 36);
-INSERT INTO Ages (name, age) VALUES ('Michael', 16);
-INSERT INTO Ages (name, age) VALUES ('Stevey', 34);
-Once the inserts are done, run the following SQL command:
-SELECT hex(name || age) AS X FROM Ages ORDER BY X
+CREATE TABLE Counts (org TEXT, count INTEGER)
+When you have run the program on mbox.txt upload the resulting database file above for grading.
+If you run the program multiple times in testing or with dfferent files, make sure to empty out the data before each run.
 
 """
 
